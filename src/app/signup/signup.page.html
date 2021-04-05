@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input  name="name" type="text" placeholder="Name" [(ngModel)]="username" >ENTER A NAME:  </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input  mail="name" type="text" placeholder="Name" [(ngModel)]="email">e-mail:  </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input  name="name" type="password" placeholder="Name" [(ngModel)]="password">ENTER A PASSWORD:  </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input  name="name" type="password" placeholder="Name" [(ngModel)]="confirmpassword">confirm PASSWORD:  </ion-input>
+  </ion-item>
+
+  <ion-button [disable]=!username  (click)="signup()">signup</ion-button>
+  <ion-button routerLink="/home">home</ion-button>
+  <ion-avatar>
+    <img src="" >upload a photo
+  </ion-avatar>
+  <!-- <div  '></div>
+  {{a.name}} -->
+<!-- <ion-row *ngFor = 'let a of usersignup' ><ion-col>{{a.name}}</ion-col></ion-row> -->
+{{this.msg}}
+</ion-content>

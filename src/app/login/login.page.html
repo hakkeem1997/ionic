@@ -1,0 +1,25 @@
+
+<ion-header>
+  <ion-toolbar>
+   <div>
+    <ion-button routerLink="/home" >
+      <ion-icon  name="arrow-back"  ></ion-icon> 
+    </ion-button>
+  </div>
+  
+ 
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="content">
+  <ion-item>
+    <ion-input  name="name" type="text" placeholder="Name" [(ngModel)]="loginname" >ENTER A NAME:  </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input  name="name" type="password" placeholder="password" [(ngModel)]="loginpassword" >ENTER A PASSWORD:  </ion-input>
+  </ion-item>
+  <ion-button  (click)="check()">LOGIN</ion-button>
+  
+  {{msg}}
+</ion-content>
