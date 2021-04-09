@@ -12,7 +12,10 @@ export class SignupPage implements OnInit {
   confirmpassword: any;
   usersignup: any = [];
   msg: any;
-  constructor() { }
+  pictures: any = [];
+  photo: any;
+  fileName: any;
+  constructor() {}
 
   ngOnInit() {
   }
@@ -34,11 +37,31 @@ export class SignupPage implements OnInit {
       }
     }
     else {
-      alert("invalid or missing")
+      this.msg="invalid or missing";
     }
   }
-  // if(!localStorage.getItem('initData')){
-  //   $window.localStorage.setItem('initData', JSON.stringify($scope.initData));
-  //   }
+ 
+
+  loadImageFromDevice(event) {
+
+    const file = event.target.files[0];
+    this.fileName = file.name;
+
+    console.log(file);
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    // reader.readAsArrayBuffer(file);
+
+    reader.onload = () => {
+
+      // get the blob of the image:
+      this.fileName = reader.result;
+      console.log(reader.result);
+
+    };
+    
+
+  };
 
 }

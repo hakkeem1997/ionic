@@ -1,4 +1,4 @@
-import { JSDocComment } from '@angular/compiler';
+import { JSDocComment, ThrowStmt } from '@angular/compiler';
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -31,7 +31,8 @@ export class LoginPage implements OnInit {
 
       else {
         // this.router.navigate(['/home'])
-         alert("invalid");
+        //  alert("invalid");
+        this.msg="invalid username or pasword";
 
       }
 

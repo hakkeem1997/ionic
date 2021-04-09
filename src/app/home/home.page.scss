@@ -17,7 +17,7 @@
   font-size: 16px;
   line-height: 22px;
 
-  color: #f11616;
+  color:red;
 
   margin: 0;
 }
@@ -25,3 +25,15 @@
 #container a {
   text-decoration: none;
 }
+
+// ion-content {
+//   --padding-bottom: 50px;
+//   --padding-end: 300px;
+//   --padding-start: 40%;
+//   --padding-top: 50px;
+// }
+
+.toolbar{
+  --background: #6bc9ff;
+}
+

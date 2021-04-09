@@ -6,25 +6,28 @@
 
 <ion-content>
   <ion-item>
-    <ion-input  name="name" type="text" placeholder="Name" [(ngModel)]="username" >ENTER A NAME:  </ion-input>
+    <ion-input class="user"  name="name" type="text" placeholder="Name_@..123" [(ngModel)]="username" >ENTER A NAME:  </ion-input>
   </ion-item>
   <ion-item>
-    <ion-input  mail="name" type="text" placeholder="Name" [(ngModel)]="email">e-mail:  </ion-input>
+    <ion-input class="usermail" mail="name" type="text" placeholder="email@" [(ngModel)]="email">e-mail:  </ion-input>
   </ion-item>
   <ion-item>
-    <ion-input  name="name" type="password" placeholder="Name" [(ngModel)]="password">ENTER A PASSWORD:  </ion-input>
+    <ion-input class="userpassword"  name="name" type="password" placeholder="password" [(ngModel)]="password">ENTER A PASSWORD:  </ion-input>
   </ion-item>
   <ion-item>
-    <ion-input  name="name" type="password" placeholder="Name" [(ngModel)]="confirmpassword">confirm PASSWORD:  </ion-input>
+    <ion-input class="userconfirmpassword" name="name" type="password" placeholder="confirmpassword" [(ngModel)]="confirmpassword">confirm PASSWORD:  </ion-input>
   </ion-item>
 
   <ion-button [disable]=!username  (click)="signup()">signup</ion-button>
   <ion-button routerLink="/home">home</ion-button>
-  <ion-avatar>
-    <img src="" >upload a photo
-  </ion-avatar>
-  <!-- <div  '></div>
-  {{a.name}} -->
-<!-- <ion-row *ngFor = 'let a of usersignup' ><ion-col>{{a.name}}</ion-col></ion-row> -->
-{{this.msg}}
+  <ion-item>
+    {{this.msg}}
+  </ion-item>
+ <br>
+   
+    <input type="file" (change)="loadImageFromDevice($event)" id="file-input"
+    accept="image/png, image/jpeg"  [(ngModel)]="photo" >
+  <img [src]="fileName"  >
+
+
 </ion-content>

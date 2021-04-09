@@ -1,7 +1,21 @@
-.toolbar{
---background-color: darkred;
-}
-.ab{
-    background-color: crimson  !important;
 
+.user{
+    background-color: rgb(241, 218, 160);
+    height: 50px;
+}
+.usermail{
+    background-color:rgb(241, 218, 160);
+
+}
+.userpassword{
+    background-color:rgb(241, 218, 160);
+}
+.userconfirmpassword{
+    background-color: rgb(241, 218, 160);
+}
+ion-content{
+    --ion-background-color:#ded6eb;
+}
+.toolbar{
+    --background: #6bc9ff;
 }
