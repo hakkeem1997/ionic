@@ -4,6 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MyserviceService } from './../myservice.service';
 import { RouterModule, } from '@angular/router';
+
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -15,32 +18,40 @@ export class LoginPage implements OnInit {
   loginpassword: any;
   usersignup: any;
   msg: any;
+  loginuser: any;
   constructor(private routes: Router, private service: MyserviceService) {
   }
-  ngOnInit() {}
+  ngOnInit() { }
   check() {
-    
-    let b = JSON.parse(localStorage.getItem('a'))
+     //get a local storage from the sign up as a loginid
+    let loginid = JSON.parse(localStorage.getItem('user'))   
 
-    if (b.find(res => res.name == this.loginname && res.pasword == this.loginpassword)){
+    //find in loginid the required name and password are  in a local storage if it is in local storage its true
+    if (loginid.find(res => res.name == this.loginname && res.pasword == this.loginpassword)) {
       localStorage.setItem('loginname', 'true');
+      localStorage.setItem('loginuser', this.loginname);//this is for publish a username in dashboard 
+
+      this.loginname = '';
+      this.loginpassword = '';
+      this.msg = '';
       this.routes.navigate(['/dashboard']);
     }
 
 
 
-      else {
-        // this.router.navigate(['/home'])
-        //  alert("invalid");
-        this.msg="invalid username or pasword";
-
-      }
-
-
-    // }
-   
+    else {
+      this.msg = "invalid username or pasword";
+    }
   }
-  
+
+  home() {
+    this.loginname = '';
+    this.loginpassword = '';
+    this.routes.navigate(['/home']);
+  }
 }
+
+
+
 
 

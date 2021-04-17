@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPage implements OnInit {
 userid:any;
+  userName: string;
   constructor() { }
 
   ngOnInit() {
+    this.userName= localStorage.getItem('loginuser')
   }
-  clearid(){
+  // clearid(){
 
-     this.userid=JSON.parse(localStorage.getItem('a'));
-    localStorage.clear();
-  }
+  //    this.userid=JSON.parse(localStorage.getItem('a'));
+  //   localStorage.clear();
+  // }
+
+
 }

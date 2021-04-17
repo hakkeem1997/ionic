@@ -1,6 +1,5 @@
 #container {
   text-align: center;
-
   position: absolute;
   left: 0;
   right: 0;
@@ -16,9 +15,6 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-
-  color:red;
-
   margin: 0;
 }
 
@@ -26,14 +22,14 @@
   text-decoration: none;
 }
 
-// ion-content {
-//   --padding-bottom: 50px;
-//   --padding-end: 300px;
-//   --padding-start: 40%;
-//   --padding-top: 50px;
-// }
-
 .toolbar{
-  --background: #6bc9ff;
+  --ion-background-color:#e4dde6;
 }
 
+
+ion-content{
+  --ion-background-color:#e4dde6;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
