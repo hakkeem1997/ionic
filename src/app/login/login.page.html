@@ -9,16 +9,14 @@
     <ion-title class="title">login</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content >
+<ion-content>
   <div class="content">
     <img src="assets/download.png">
     <ion-item>
       <ion-icon name="person" placeholder="Name">
       </ion-icon>
       <ion-input class="name" name="name" type="text" placeholder="Name" [(ngModel)]="loginname">ENTER A NAME:
-
       </ion-input>
-
     </ion-item>
     <ion-item>
       <ion-icon name="key">
@@ -29,7 +27,7 @@
     <ion-item>
       {{msg}}
     </ion-item>
-    <ion-button (click)="check()"color="dark">LOGIN</ion-button>
+    <ion-button (click)="check()" color="dark">LOGIN</ion-button>
 
   </div>
 

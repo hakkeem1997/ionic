@@ -22,18 +22,19 @@ export class SignupPage implements OnInit {
   passwordconfirmpassword: any;
   namealreadyexist: any;
   routerlink: any;
+  usercapture: any = [];
   constructor(private routes: Router) { }
 
   ngOnInit() { }
   signup() {
     //validate the name is alphabets,and space with caps only
-    if (!/^[A-Z]+[a-zA-z ]+$/.test(this.username) || this.username == '') {
+    if (!/^[A-Z]+[ a-zA-z]+$/.test(this.username) || this.username == '') {
       this.alertname = 'name starts with caps,alphabets and space is accepted';
     }
 
     //validate the email 
     else if (!/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+[.][a-zA-z]+$/.test(this.email) || this.email == '') {
-      this.mailalert = 'enter a valid email';
+      this.mailalert = 'enter a valid email(@ .)';
     }
 
     //validate the password must be start with caps and special character appear
@@ -48,9 +49,9 @@ export class SignupPage implements OnInit {
     //if the above condition is successed then the name and password should store in local storage
 
     else {
-      let usernamepassword = {   
+      let usernamepassword = {
         "name": this.username,      //signup name wil appeared
-        "pasword": this.password    //signup password will appeared
+        "pasword": this.password,    //signup password will appeared
       }
 
       if (!localStorage.getItem('user')) {
@@ -63,8 +64,8 @@ export class SignupPage implements OnInit {
       else {
         let existingData = JSON.parse(localStorage.getItem('user'));
 
-         //it checks the username which is stored in a localstorage
-        if (!(existingData.find(response => response.name == this.username))) {    
+        //it checks the username which is stored in a localstorage
+        if (!(existingData.find(response => response.name == this.username))) {
           existingData.push(usernamepassword);
           localStorage.setItem('user', JSON.stringify(existingData));
           this.namealreadyexist = " ";                                //username alreeady exist should empty

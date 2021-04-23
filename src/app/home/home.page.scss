@@ -23,13 +23,16 @@
 }
 
 .toolbar{
-  --ion-background-color:#e4dde6;
+  --ion-background-color:#161616;
 }
 
 
 ion-content{
-  --ion-background-color:#e4dde6;
+  --ion-background-color:#fbebff;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+.title{
+  color: rgb(221, 199, 255);
 }

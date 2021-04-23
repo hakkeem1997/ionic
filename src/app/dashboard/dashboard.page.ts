@@ -6,18 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-userid:any;
+  userid: any;
   userName: string;
-  constructor() { }
+  img: string;
+  photosArray:any=[];
+
+  constructor() {
+    // const userimage = localStorage.getItem('user');
+    // if (userimage) {
+    //   this.photosArray =JSON.parse(userimage);
+    // }
+  }
+
 
   ngOnInit() {
-    this.userName= localStorage.getItem('loginuser')
+    // debugger;
+    this.userName = localStorage.getItem('loginuser')
+
   }
-  // clearid(){
 
-  //    this.userid=JSON.parse(localStorage.getItem('a'));
-  //   localStorage.clear();
-  // }
-
-
+  
+ 
 }
